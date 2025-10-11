@@ -4,27 +4,27 @@ import {supprimerDoublons} from '../index';
 
 
 describe('supprimerDoublons', () => {
-  it('should remove duplicates from an array with consecutive duplicates', () => {
+  test('doit supprimer les doublons consécutifs d\'un tableau', () => {
     expect(supprimerDoublons([1, 2, 2, 3, 3, 3, 4])).toEqual([1, 2, 3, 4]);
   });
 
-  it('should remove duplicates from an array with non-consecutive duplicates', () => {
+  test('doit supprimer les doublons non consécutifs d\'un tableau', () => {
     expect(supprimerDoublons([1, 2, 3, 2, 4, 1])).toEqual([1, 2, 3, 4]);
   });
 
-  it('should return the same array if there are no duplicates', () => {
+  test('doit retourner le même tableau s\'il n\'y a pas de doublons', () => {
     expect(supprimerDoublons([1, 2, 3, 4])).toEqual([1, 2, 3, 4]);
   });
 
-  it('should return an empty array if input is empty', () => {
+  test('doit retourner un tableau vide si l\'entrée est vide', () => {
     expect(supprimerDoublons([])).toEqual([]);
   });
 
-  it('should handle an array with all elements the same', () => {
+  test('doit gérer un tableau où tous les éléments sont identiques', () => {
     expect(supprimerDoublons([5, 5, 5, 5])).toEqual([5]);
   });
 
-  it('should handle negative numbers and zero', () => {
+  test('doit gérer les nombres négatifs et zéro', () => {
     expect(supprimerDoublons([0, -1, -1, 2, 0])).toEqual([0, -1, 2]);
   });
 });
